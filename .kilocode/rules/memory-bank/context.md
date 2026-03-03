@@ -17,6 +17,7 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Outlook login page replica created
 - [x] Database support with Drizzle + SQLite
 - [x] Form submission API route
+- [x] Admin page to view submissions
 
 ## Current Structure
 
