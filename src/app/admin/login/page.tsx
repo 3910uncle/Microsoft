@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/80 to-slate-900/80 z-10"></div>
         <img 
-          src="/page1.jpg" 
+          src="/admin-bg.jpg" 
           alt="Background" 
           className="w-full h-full object-cover"
         />
