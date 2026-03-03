@@ -4,7 +4,9 @@ import * as schema from "./schema";
 import { migrate } from "drizzle-orm/better-sqlite3/migrator";
 import { existsSync, mkdirSync } from "fs";
 
-const sqlite = new Database("local.db");
+// Use a file-based SQLite database
+const dbPath = process.env.VERCEL ? "/tmp/local.db" : "local.db";
+const sqlite = new Database(dbPath);
 export const db = drizzle(sqlite, { schema });
 
 // Run migrations on startup
