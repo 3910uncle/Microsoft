@@ -47,3 +47,6 @@ next-env.d.ts
 *.tar.gz
 *.zip
 *.7z
+
+# Local database
+local.db
