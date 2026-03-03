@@ -20,6 +20,7 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Admin page to view submissions
 - [x] Admin authentication with password protection
 - [x] Beautiful gradient backgrounds for login pages
+- [x] Custom Unsplash background image for all login pages
 
 ## Current Structure
 
@@ -61,6 +62,7 @@ The template now includes Microsoft Outlook login page replicas:
 - **Form submission to database API**
 
 ### Visual Design Updates
+- Custom Unsplash background image for all login pages
 - Beautiful animated gradient backgrounds (blue, purple, slate)
 - Floating orbs for visual interest
 - Frosted glass effect on login cards
@@ -127,3 +129,4 @@ export async function GET() {
 |------|---------|
 | Initial | Template created with base setup |
 | 2026-03-03 | Added gradient backgrounds to login pages |
+| 2026-03-03 | Added custom Unsplash background image to login pages |
