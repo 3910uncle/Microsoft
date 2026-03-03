@@ -121,9 +121,8 @@ export async function GET() {
 
 ## Pending Improvements
 
-- [ ] Add more recipes (auth, email, etc.)
-- [ ] Add example components
-- [ ] Add testing setup recipe
+- [x] Remove Netlify deployment config
+- [x] Configure for Vercel deployment
 
 ## Session History
 
