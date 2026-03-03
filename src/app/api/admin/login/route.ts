@@ -7,7 +7,7 @@ export async function POST(request: Request) {
     const { password } = body;
 
     // Get admin password from environment variable, with fallback default
-    const adminPassword = process.env.ADMIN_PASSWORD || "kilo";
+    const adminPassword = process.env.ADMIN_PASSWORD || "SecurePass2026!";
 
     if (!adminPassword) {
       return NextResponse.json(
