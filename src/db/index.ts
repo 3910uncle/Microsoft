@@ -1,19 +1,14 @@
-import { drizzle } from "drizzle-orm/better-sqlite3";
-import Database from "better-sqlite3";
+import { drizzle } from "drizzle-orm/bun-sqlite";
+import { Database } from "bun:sqlite";
 import * as schema from "./schema";
-import { migrate } from "drizzle-orm/better-sqlite3/migrator";
-import { existsSync, mkdirSync } from "fs";
+import { migrate } from "drizzle-orm/bun-sqlite/migrator";
 
 // Use a file-based SQLite database
-const dbPath = process.env.VERCEL ? "/tmp/local.db" : "local.db";
-const sqlite = new Database(dbPath);
+const sqlite = new Database("local.db");
 export const db = drizzle(sqlite, { schema });
 
 // Run migrations on startup
 const migrationsFolder = "./src/db/migrations";
-if (!existsSync(migrationsFolder)) {
-  mkdirSync(migrationsFolder, { recursive: true });
-}
 
 // Run migrations (wrapped in try-catch to handle fresh deployments)
 try {
