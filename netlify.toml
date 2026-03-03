@@ -1,7 +1,6 @@
 [build]
   command = "bun run build"
-  publish = ".next/server"
-  functions = ".next/server"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
