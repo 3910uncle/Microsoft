@@ -18,6 +18,7 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Database support with Drizzle + SQLite
 - [x] Form submission API route
 - [x] Admin page to view submissions
+- [x] Admin authentication with password protection
 
 ## Current Structure
 
@@ -30,6 +31,11 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 | `src/app/layout.tsx` | Root layout | ✅ Ready |
 | `src/app/globals.css` | Global styles | ✅ Ready |
 | `.kilocode/` | AI context & recipes | ✅ Ready |
+| `src/app/admin/login/page.tsx` | Admin login page | ✅ Ready |
+| `src/app/api/admin/login/route.ts` | Admin login API | ✅ Ready |
+| `src/app/api/admin/logout/route.ts` | Admin logout API | ✅ Ready |
+| `src/middleware.ts` | Route protection middleware | ✅ Ready |
+| `.env.example` | Environment config template | ✅ Ready |
 
 ## Current Focus
 
