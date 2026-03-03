@@ -42,13 +42,15 @@ function PasswordForm() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-slate-900"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-transparent to-pink-500/20"></div>
-      {/* Floating orbs for visual interest */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl"></div>
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/80 to-slate-900/80 z-10"></div>
+        <img 
+          src="/page1.jpg" 
+          alt="Background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       {/* Content with frosted glass effect */}
       <div className="relative z-10 w-full max-w-[440px] p-8 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">

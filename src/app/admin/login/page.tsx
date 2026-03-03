@@ -39,39 +39,28 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#f5f5f5",
-        fontFamily: "system-ui, sans-serif",
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: "white",
-          padding: "40px",
-          borderRadius: "8px",
-          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-          width: "100%",
-          maxWidth: "400px",
-        }}
-      >
-        <h1 style={{ marginBottom: "24px", textAlign: "center" }}>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/80 to-slate-900/80 z-10"></div>
+        <img 
+          src="/page1.jpg" 
+          alt="Background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content with frosted glass effect */}
+      <div className="relative z-10 w-full max-w-[400px] p-10 rounded-lg bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">
+        <h1 className="text-2xl font-semibold text-white mb-6 text-center">
           Admin Login
         </h1>
 
         <form onSubmit={handleSubmit}>
-          <div style={{ marginBottom: "20px" }}>
+          <div className="mb-5">
             <label
               htmlFor="password"
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                fontWeight: "500",
-              }}
+              className="block text-sm font-medium text-gray-200 mb-2"
             >
               Password
             </label>
@@ -81,25 +70,12 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              style={{
-                width: "100%",
-                padding: "12px",
-                border: "1px solid #ddd",
-                borderRadius: "4px",
-                fontSize: "16px",
-                boxSizing: "border-box",
-              }}
+              className="w-full px-3 py-2.5 border border-white/30 rounded bg-white/20 backdrop-blur-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 text-base text-white placeholder-gray-400"
             />
           </div>
 
           {error && (
-            <p
-              style={{
-                color: "#dc2626",
-                marginBottom: "16px",
-                fontSize: "14px",
-              }}
-            >
+            <p className="text-red-400 text-sm mb-4">
               {error}
             </p>
           )}
@@ -107,33 +83,16 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            style={{
-              width: "100%",
-              padding: "12px",
-              backgroundColor: "#2563eb",
-              color: "white",
-              border: "none",
-              borderRadius: "4px",
-              fontSize: "16px",
-              cursor: loading ? "not-allowed" : "pointer",
-              opacity: loading ? 0.7 : 1,
-            }}
+            className="w-full bg-[#0067b8] text-white font-semibold py-2.5 px-4 rounded hover:bg-[#005a9e] transition-colors disabled:opacity-50"
           >
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
-        <p
-          style={{
-            marginTop: "20px",
-            textAlign: "center",
-            fontSize: "14px",
-            color: "#666",
-          }}
-        >
+        <p className="mt-5 text-center text-sm text-gray-300">
           <Link
             href="/"
-            style={{ color: "#2563eb", textDecoration: "none" }}
+            className="text-cyan-300 hover:underline"
           >
             Back to Home
           </Link>
