@@ -23,6 +23,7 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Custom Unsplash background image for all login pages
 - [x] Commit database changes to git
 - [x] Admin password environment variable with fallback
+- [x] Fix database path for Vercel deployment (/tmp/local.db)
 
 ## Current Structure
 
