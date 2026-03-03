@@ -52,6 +52,24 @@ export default function AdminLoginPage() {
 
       {/* Content with frosted glass effect */}
       <div className="relative z-10 w-full max-w-[400px] p-10 rounded-lg bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">
+        {/* Microsoft Logo */}
+        <div className="mb-6 flex justify-center">
+          <svg 
+            width="108" 
+            height="24" 
+            viewBox="0 0 108 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Microsoft"
+          >
+            <path d="M0 0H24V24H0V0Z" fill="#F25022"/>
+            <path d="M32 0H56V24H32V0Z" fill="#7FBA00"/>
+            <path d="M64 0H88V24H64V0Z" fill="#00A4EF"/>
+            <path d="M96 0H120V24H96V0Z" fill="#FFB900"/>
+          </svg>
+        </div>
+
         <h1 className="text-2xl font-semibold text-white mb-6 text-center">
           Admin Login
         </h1>

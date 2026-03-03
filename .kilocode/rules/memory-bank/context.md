@@ -130,3 +130,4 @@ export async function GET() {
 | Initial | Template created with base setup |
 | 2026-03-03 | Added gradient backgrounds to login pages |
 | 2026-03-03 | Added custom Unsplash background image to login pages |
+| 2026-03-03 | Added Microsoft 4-color logo to sign in, password, and admin login pages |
