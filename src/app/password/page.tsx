@@ -84,7 +84,6 @@ function PasswordForm() {
             </div>
             <div>
               <p className="text-sm text-gray-700">{email}</p>
-              <p className="text-xs text-gray-500">School account</p>
             </div>
           </div>
         </div>
