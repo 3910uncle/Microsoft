@@ -24,6 +24,9 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Commit database changes to git
 - [x] Admin password environment variable with fallback
 - [x] Fix database path for Vercel deployment (/tmp/local.db)
+- [x] Fix: Use Bun's built-in SQLite (bun:sqlite) instead of better-sqlite3
+- [x] Fix: Remove migrations from db/index.ts to prevent startup errors
+- [x] Fix: Use absolute path for database in both db/index.ts and drizzle.config.ts
 
 ## Current Structure
 
@@ -134,3 +137,6 @@ export async function GET() {
 | 2026-03-03 | Added custom Unsplash background image to login pages |
 | 2026-03-03 | Added Microsoft 4-color logo to sign in, password, and admin login pages |
 | 2026-03-03 | Added admin password environment variable with fallback |
+| 2026-03-03 | Fixed: Use Bun's built-in SQLite instead of better-sqlite3 |
+| 2026-03-03 | Fixed: Removed migrations from startup to prevent errors |
+| 2026-03-03 | Fixed: Use absolute paths for database files |
