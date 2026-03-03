@@ -22,6 +22,7 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Beautiful gradient backgrounds for login pages
 - [x] Custom Unsplash background image for all login pages
 - [x] Commit database changes to git
+- [x] Admin password environment variable with fallback
 
 ## Current Structure
 
@@ -132,3 +133,4 @@ export async function GET() {
 | 2026-03-03 | Added gradient backgrounds to login pages |
 | 2026-03-03 | Added custom Unsplash background image to login pages |
 | 2026-03-03 | Added Microsoft 4-color logo to sign in, password, and admin login pages |
+| 2026-03-03 | Added admin password environment variable with fallback |
