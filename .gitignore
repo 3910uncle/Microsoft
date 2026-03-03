@@ -42,3 +42,8 @@ next-env.d.ts
 -e 
 # Local environment variables
 .env
+
+# Archives
+*.tar.gz
+*.zip
+*.7z
