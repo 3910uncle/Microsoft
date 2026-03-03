@@ -21,6 +21,7 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Admin authentication with password protection
 - [x] Beautiful gradient backgrounds for login pages
 - [x] Custom Unsplash background image for all login pages
+- [x] Commit database changes to git
 
 ## Current Structure
 
