@@ -27,6 +27,7 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] Fix: Use Bun's built-in SQLite (bun:sqlite) instead of better-sqlite3
 - [x] Fix: Remove migrations from db/index.ts to prevent startup errors
 - [x] Fix: Use absolute path for database in both db/index.ts and drizzle.config.ts
+- [x] Fix: Remove better-sqlite3 and @types/better-sqlite3 from package.json (the root cause of admin login 500 error)
 
 ## Current Structure
 
